@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import '../components/Pagination.css'
 
 const Pagination = ({ blogsPerPage, blogs }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -14,7 +13,7 @@ const Pagination = ({ blogsPerPage, blogs }) => {
   const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
 
   const renderBlogs = currentBlogs.map((blog) => (
-    <a href={blog.link} className='bg-yellow-100 hover:shadow-lg hover:scale-[102%] anim font-semibold w-11/12 md:w-fit p-3 flex flex-col gap-2 md:p-4 rounded-xl m-2 mx-auto md:m-4' key={blog.id}>
+    <a href={blog.link} className='bg-yellow-100 hover:shadow-lg hover:scale-[102%] anim font-semibold w-11/12 md:w-fit p-3 flex flex-col gap-2 md:p-4 rounded-xl m-2 mx-auto md:m-4' >
       <img className='object-cover w-full md:w-auto h-[13rem] rounded-lg drop-shadow-lg mx-auto md:mx-0' src={blog.img} alt={blog.title} />
       <h2 className='text-lg md:text-xl px-3 font-bold'>{blog.title}</h2>
       <p className='text-sm opacity-60 -mt-2 px-3'>{blog.desc}</p>
@@ -63,7 +62,7 @@ Pagination.propTypes = {
   blogsPerPage: PropTypes.number.isRequired,
   blogs: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      // id: PropTypes.number.isRequired,
       img: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       desc: PropTypes.string.isRequired,
